@@ -1,14 +1,18 @@
 ---
 import Button from "./Button.astro";
+import BeforeAfter from "./BeforeAfter.astro";
 ---
 
-<div class="container">
+<div class="container" >
   <main>
-    <section id="hero">
+    <section class="hero">
       <h1 data-split="heading">JJ'S DETAILING</h1>
       <h2 data-split="heading">Meticulous Detailing. Stunning Results.</h2>
       <Button link="#" text="BOOK NOW" />
     </section>
+	<section>
+		<BeforeAfter />
+	</section>
   </main>
 </div>
 
@@ -17,7 +21,7 @@ import Button from "./Button.astro";
     font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
       Arial, sans-serif;
     height: 100%;
-    background-color: white;
+    background-color: #483F3E;
     color: #f25042;
   }
 
@@ -25,25 +29,36 @@ import Button from "./Button.astro";
     height: 100%;
     display: flex;
     justify-content: center;
+	align-items: center;
+	gap: 5rem;
   }
 
-  #hero {
+  .hero {
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: center;
+	text-align: left;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 0.25em;
+	width: 100%;
+	font-family: "futura-100", sans-serif;
+	font-weight: 700;
+	font-style: normal;
   }
 
   h2 {
     margin: 0 0 1em;
     font-weight: normal;
-    color: #111827;
+    color: #fafafa;
     font-size: 30px;
+	width: 100%;
+	font-family: "futura-100", sans-serif;
+font-weight: 700;
+font-style: normal;
   }
 
   p {
@@ -60,7 +75,7 @@ import Button from "./Button.astro";
       flex-direction: column;
     }
 
-    #hero {
+    .hero {
       display: block;
       padding-top: 10%;
     }
