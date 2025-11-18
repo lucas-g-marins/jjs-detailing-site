@@ -122,6 +122,9 @@ import Footer from "../components/Footer.astro";
       autoSplit: true,
       mask: "lines",
       onSplit(instance) {
+        instance.lines.forEach((line) => {
+          line.style.textAlign = "center";
+        });
         return gsap.from(instance.lines, {
           duration: 1.5,
           yPercent: 110,
@@ -554,7 +557,7 @@ import Footer from "../components/Footer.astro";
     color: #fafafa;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 890px) {
     .section-resource__h2 {
       font-size: 3em;
     }
@@ -585,6 +588,14 @@ import Footer from "../components/Footer.astro";
     .about-section__text-container {
       padding: 0;
       width: 90%;
+    }
+
+    .progress-nav__inner {
+      justify-self: center;
+    }
+
+    h3 div {
+      text-align: center !important;
     }
   }
 </style>
