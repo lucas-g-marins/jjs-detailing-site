@@ -38,8 +38,8 @@ import Footer from "../components/Footer.astro";
             ></a
           >
           <a
-            data-progress-nav-target="#product"
-            href="#product"
+            data-progress-nav-target="#book"
+            href="#book"
             class="progress-nav__btn"
             ><span class="progress-nav__btn-text">3. Book</span><span
               class="progress-nav__btn-text is--duplicate">3. Book</span
@@ -52,7 +52,7 @@ import Footer from "../components/Footer.astro";
           </div>
         </div>
       </div>
-      <a href="#bottom" class="progress-nav__contact-btn"
+      <a href="#book" class="progress-nav__contact-btn"
         ><span class="progress-nav__btn-text">Book</span><span
           class="progress-nav__btn-text is--duplicate">Book</span
         ></a
@@ -95,17 +95,42 @@ import Footer from "../components/Footer.astro";
     <Products />
   </section>
   <section
-    id="product"
+    id="book"
     data-progress-nav-anchor=""
     class="section-resource is--flipped"
   >
     <h2 class="section-resource__h2" data-split="heading">Book</h2>
+    <iframe
+      data-tally-src="https://tally.so/embed/QKK1Bk?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="657"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="JJ's Detailing Booking"></iframe>
+    <script>
+      var d = document,
+        w = "https://tally.so/widgets/embed.js",
+        v = function () {
+          "undefined" != typeof Tally
+            ? Tally.loadEmbeds()
+            : d
+                .querySelectorAll("iframe[data-tally-src]:not([src])")
+                .forEach(function (e) {
+                  e.src = e.dataset.tallySrc;
+                });
+        };
+      if ("undefined" != typeof Tally) v();
+      else if (d.querySelector('script[src="' + w + '"]') == null) {
+        var s = d.createElement("script");
+        (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
+      }
+    </script>
   </section>
-  <Footer
-    id="bottom"
-    data-progress-nav-anchor=""
-    class="section-resource is--flipped"
-  />
+  <section id="bottom" data-progress-nav-anchor="">
+    <Footer />
+  </section>
 </Layout>
 
 <script>

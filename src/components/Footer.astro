@@ -25,6 +25,18 @@
           </div>
         </div>
       </div>
+      <div class="demo-attribute">
+        <p>
+          Website by{" "}
+          <a
+            data-underline-link=""
+            href="https://contemplativesoftware.ca"
+            class="demo-attribute__link"
+          >
+            {" "} Contemplative Software</a
+          >
+        </p>
+      </div>
     </footer>
     <div data-footer-parallax-dark="" class="footer-wrap__dark"></div>
   </div>
@@ -79,6 +91,9 @@
   .demo-main {
     overflow: clip;
     background-color: #fafafa;
+    font-family: "futura-100", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .demo-eyebrow {
@@ -174,7 +189,7 @@
     flex-flow: column;
     justify-content: center;
     min-height: 100svh;
-    padding: 2.5em;
+    padding: 5.5em;
     font-weight: 600;
     display: flex;
     position: relative;
@@ -225,6 +240,20 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  .demo-attribute {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .demo-attribute__link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .demo-attribute__link:visted {
+    color: inherit;
   }
 
   @media screen and (max-width: 991px) {
