@@ -36,6 +36,50 @@
             />
           </div>
         </div>
+        <div data-stacked-cards-item="" class="stack-cards__item">
+          <div data-stacked-cards-card="" class="stack-cards__card">
+            <img
+              width="540"
+              loading="lazy"
+              alt=""
+              src="/car1.JPEG"
+              class="stack-cards__card-image"
+            />
+          </div>
+        </div>
+        <div data-stacked-cards-item="" class="stack-cards__item">
+          <div data-stacked-cards-card="" class="stack-cards__card">
+            <img
+              width="540"
+              loading="lazy"
+              alt=""
+              src="/car2.JPEG"
+              class="stack-cards__card-image"
+            />
+          </div>
+        </div>
+        <div data-stacked-cards-item="" class="stack-cards__item">
+          <div data-stacked-cards-card="" class="stack-cards__card">
+            <img
+              width="540"
+              loading="lazy"
+              alt=""
+              src="/car3.JPEG"
+              class="stack-cards__card-image"
+            />
+          </div>
+        </div>
+        <div data-stacked-cards-item="" class="stack-cards__item">
+          <div data-stacked-cards-card="" class="stack-cards__card">
+            <img
+              width="540"
+              loading="lazy"
+              alt=""
+              src="/car4.JPEG"
+              class="stack-cards__card-image"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -82,13 +126,13 @@
 
         // check minimum cards
         const initialItems = Array.from(
-          list.querySelectorAll(":scope > [data-stacked-cards-item]")
+          list.querySelectorAll(":scope > [data-stacked-cards-item]"),
         );
         if (initialItems.length < 3) {
           console.error(
             "[StackedCards] Minimum of 3 cards required. Found:",
             initialItems.length,
-            list
+            list,
           );
           return;
         }
@@ -100,7 +144,7 @@
 
         function restack() {
           const items = Array.from(
-            list.querySelectorAll("[data-stacked-cards-item]")
+            list.querySelectorAll("[data-stacked-cards-item]"),
           );
           items.forEach(function (item) {
             item.classList.remove("is--active", "is--second");
@@ -129,7 +173,7 @@
 
           // cache top two cards
           const items = Array.from(
-            list.querySelectorAll(":scope > [data-stacked-cards-item]")
+            list.querySelectorAll(":scope > [data-stacked-cards-item]"),
           );
           firstItem = items[0];
           secondItem = items[1];
@@ -239,7 +283,12 @@
             gsap.fromTo(
               card,
               { x: visualX, rotation: 0 },
-              { x: 0, rotation: 0, ...easeAfterRelease, onComplete: resetCycle }
+              {
+                x: 0,
+                rotation: 0,
+                ...easeAfterRelease,
+                onComplete: resetCycle,
+              },
             );
           } else {
             gsap.fromTo(
@@ -254,15 +303,15 @@
                   [activeDeg, inactiveDeg] = [inactiveDeg, activeDeg];
                   resetCycle();
                   const newCard = item.querySelector(
-                    "[data-stacked-cards-card]"
+                    "[data-stacked-cards-card]",
                   );
                   gsap.fromTo(
                     newCard,
                     { x: exitX },
-                    { x: 0, ...easeAfterRelease, onComplete: resetCycle }
+                    { x: 0, ...easeAfterRelease, onComplete: resetCycle },
                   );
                 },
-              }
+              },
             );
           }
         }
