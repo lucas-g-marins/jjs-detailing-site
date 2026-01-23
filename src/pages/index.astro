@@ -4,6 +4,7 @@ import BeforeAfter from "../components/BeforeAfter.astro";
 import Products from "../components/Products.astro";
 import StackedCards from "../components/StackedCards.astro";
 import Footer from "../components/Footer.astro";
+import Marquee from "../components/Marquee.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,7 +13,7 @@ import Footer from "../components/Footer.astro";
 <Layout>
   <nav class="progress-nav">
     <div class="progress-nav__inner">
-      <a href="#top" class="progress-nav__logo">JJ'S</a>
+      <a href="#top" class="progress-nav__logo">JJ'S DETAILING</a>
       <div class="progress-nav__wrapper">
         <div data-progress-nav-list="" class="progress-nav__list">
           <div class="progress-nav__indicator"></div>
@@ -64,7 +65,8 @@ import Footer from "../components/Footer.astro";
     <h3 class="section-resource__h3" data-split="heading">
       Meticulous Detailing. Stunning Results.
     </h3>
-    <BeforeAfter />
+    <!-- <BeforeAfter /> -->
+    <Marquee />
   </section>
   <section
     id="introduction"
@@ -100,33 +102,9 @@ import Footer from "../components/Footer.astro";
     class="section-resource is--flipped"
   >
     <h2 class="section-resource__h2" data-split="heading">Book</h2>
-    <iframe
-      data-tally-src="https://tally.so/embed/QKK1Bk?hideTitle=1&transparentBackground=1&dynamicHeight=1"
-      loading="lazy"
-      width="100%"
-      height="657"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      title="JJ's Detailing Booking"></iframe>
-    <script>
-      var d = document,
-        w = "https://tally.so/widgets/embed.js",
-        v = function () {
-          "undefined" != typeof Tally
-            ? Tally.loadEmbeds()
-            : d
-                .querySelectorAll("iframe[data-tally-src]:not([src])")
-                .forEach(function (e) {
-                  e.src = e.dataset.tallySrc;
-                });
-        };
-      if ("undefined" != typeof Tally) v();
-      else if (d.querySelector('script[src="' + w + '"]') == null) {
-        var s = d.createElement("script");
-        (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
-      }
-    </script>
+    <script
+      src="https://square.site/appointments/buyer/widget/esmdw7ewls8kl8/LV46MTHN5EQG1.js"
+    ></script>
   </section>
   <section id="bottom" data-progress-nav-anchor="">
     <Footer />
@@ -241,13 +219,13 @@ import Footer from "../components/Footer.astro";
                     end: scrollEnd,
                     scrub,
                   },
-                }
+                },
               );
             });
         });
 
         return () => ctx.revert();
-      }
+      },
     );
   }
   function initProgressNavigation() {
@@ -303,12 +281,12 @@ import Footer from "../components/Footer.astro";
         end: "100% 50%",
         onEnter: () => {
           let activeLink = navProgress.querySelector(
-            '[data-progress-nav-target="#' + anchorID + '"]'
+            '[data-progress-nav-target="#' + anchorID + '"]',
           );
           activeLink.classList.add("is--active");
           // Remove 'is--active' class from sibling links
           let siblings = navProgress.querySelectorAll(
-            "[data-progress-nav-target]"
+            "[data-progress-nav-target]",
           );
           siblings.forEach((sib) => {
             if (sib !== activeLink) {
@@ -319,12 +297,12 @@ import Footer from "../components/Footer.astro";
         },
         onEnterBack: () => {
           let activeLink = navProgress.querySelector(
-            '[data-progress-nav-target="#' + anchorID + '"]'
+            '[data-progress-nav-target="#' + anchorID + '"]',
           );
           activeLink.classList.add("is--active");
           // Remove 'is--active' class from sibling links
           let siblings = navProgress.querySelectorAll(
-            "[data-progress-nav-target]"
+            "[data-progress-nav-target]",
           );
           siblings.forEach((sib) => {
             if (sib !== activeLink) {
@@ -339,7 +317,7 @@ import Footer from "../components/Footer.astro";
 
   function initHighlightText() {
     let splitHeadingTargets = document.querySelectorAll(
-      "[data-highlight-text]"
+      "[data-highlight-text]",
     );
     splitHeadingTargets.forEach((heading) => {
       const scrollStart =
@@ -426,6 +404,10 @@ import Footer from "../components/Footer.astro";
     border-radius: 50em;
     padding: 0.5em;
     z-index: 1000;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2em;
   }
 
   .progress-nav__list {
@@ -607,12 +589,12 @@ import Footer from "../components/Footer.astro";
     }
 
     .about-section div {
-      width: 70%;
+      width: 95%;
     }
 
     .about-section__text-container {
       padding: 0;
-      width: 90%;
+      width: 100%;
     }
 
     .progress-nav__inner {
@@ -621,6 +603,10 @@ import Footer from "../components/Footer.astro";
 
     h3 div {
       text-align: center !important;
+    }
+
+    #bottom {
+      padding: 0;
     }
   }
 </style>

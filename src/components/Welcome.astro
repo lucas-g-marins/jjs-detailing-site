@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-import BeforeAfter from "./BeforeAfter.astro";
+import Marquee from "./Marquee.astro";
 ---
 
 <div class="container">
@@ -11,15 +11,17 @@ import BeforeAfter from "./BeforeAfter.astro";
       <Button link="#" text="BOOK NOW" />
     </section>
     <section>
-      <BeforeAfter />
+      <!-- <BeforeAfter /> -->
+      <Marquee />
     </section>
   </main>
 </div>
 
 <style>
   .container {
-    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-      Arial, sans-serif;
+    font-family:
+      Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+      sans-serif;
     height: 100%;
     background-color: #483f3e;
     color: #f25042;
