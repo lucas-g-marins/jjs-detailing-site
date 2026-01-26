@@ -39,4 +39,16 @@ import BeforeAfter from "./BeforeAfter.astro";
     font-style: normal;
     font-size: 1.5em;
   }
+
+  @media screen and (max-width: 900px) {
+    .book__container {
+      flex-direction: column;
+      gap: 2em;
+    }
+
+    .book__text-container {
+      align-items: center;
+      text-align: center;
+    }
+  }
 </style>
