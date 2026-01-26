@@ -5,6 +5,7 @@ import Products from "../components/Products.astro";
 import StackedCards from "../components/StackedCards.astro";
 import Footer from "../components/Footer.astro";
 import Marquee from "../components/Marquee.astro";
+import Book from "../components/Book.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -13,7 +14,12 @@ import Marquee from "../components/Marquee.astro";
 <Layout>
   <nav class="progress-nav">
     <div class="progress-nav__inner">
-      <a href="#top" class="progress-nav__logo">JJ'S DETAILING</a>
+      <a href="#top" class="progress-nav__logo"
+        ><img
+          src="./1229.png"
+          class="progress-nav__logo progress-nav__logo-svg"
+        /></a
+      >
       <div class="progress-nav__wrapper">
         <div data-progress-nav-list="" class="progress-nav__list">
           <div class="progress-nav__indicator"></div>
@@ -95,16 +101,20 @@ import Marquee from "../components/Marquee.astro";
   <section id="concept" data-progress-nav-anchor="" class="section-resource">
     <h2 class="section-resource__h2" data-split="heading">Services</h2>
     <Products />
+    <!-- <Reviews /> -->
   </section>
   <section
     id="book"
     data-progress-nav-anchor=""
     class="section-resource is--flipped"
   >
-    <h2 class="section-resource__h2" data-split="heading">Book</h2>
-    <script
-      src="https://square.site/appointments/buyer/widget/esmdw7ewls8kl8/LV46MTHN5EQG1.js"
-    ></script>
+    <h2
+      class="section-resource__h2 section-resouce__h2--white"
+      data-split="heading"
+    >
+      Book
+    </h2>
+    <Book />
   </section>
   <section id="bottom" data-progress-nav-anchor="">
     <Footer />
@@ -396,7 +406,7 @@ import Marquee from "../components/Marquee.astro";
   }
 
   .progress-nav__logo-svg {
-    width: 8em;
+    width: 3em;
   }
 
   .progress-nav__wrapper {
@@ -407,7 +417,7 @@ import Marquee from "../components/Marquee.astro";
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    top: 2em;
+    top: 3em;
   }
 
   .progress-nav__list {
@@ -562,6 +572,14 @@ import Marquee from "../components/Marquee.astro";
     font-style: normal;
     font-size: 2rem;
     color: #fafafa;
+  }
+
+  .book__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 890px) {

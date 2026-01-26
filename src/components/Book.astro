@@ -1,0 +1,42 @@
+---
+import Button from "./Button.astro";
+import BeforeAfter from "./BeforeAfter.astro";
+---
+
+<div class="book__container">
+  <div class="book__text-container">
+    <p>Book today to return your car to its former glory!</p>
+    <Button
+      link="https://app.squareup.com/appointments/book/esmdw7ewls8kl8/LV46MTHN5EQG1/start"
+      text="Book Now!"
+    />
+  </div>
+  <div>
+    <BeforeAfter />
+  </div>
+</div>
+
+<style>
+  .book__container {
+    margin-top: 2em;
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  p {
+    text-align: left;
+    font-family: "futura-100", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+  }
+</style>
