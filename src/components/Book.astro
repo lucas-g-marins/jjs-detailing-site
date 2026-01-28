@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro";
 import BeforeAfter from "./BeforeAfter.astro";
+import Reviews from "./Reviews.astro";
 ---
 
 <div class="book__container">
@@ -12,17 +13,22 @@ import BeforeAfter from "./BeforeAfter.astro";
     />
   </div>
   <div>
-    <BeforeAfter />
+    <Reviews />
   </div>
 </div>
 
 <style>
   .book__container {
-    margin-top: 2em;
+    margin: 2em auto;
     display: flex;
     gap: 4em;
     justify-content: center;
     align-items: center;
+    width: 80%;
+  }
+
+  .book__container > div {
+    flex: 1;
   }
 
   .book__text-container {
