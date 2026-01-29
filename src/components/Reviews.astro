@@ -366,16 +366,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     display: flex;
+    position: relative;
   }
 
   .testimonial-lines__controls {
     grid-column-gap: 1em;
     grid-row-gap: 1em;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     width: 33.3333%;
     display: flex;
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
   }
 
   .testimonial-lines__main {
@@ -519,5 +523,11 @@
 
   .testimonial-lines__item-visual {
     width: 3.5em;
+  }
+
+  @media screen and (max-width: 980px) {
+    .testimonial-lines__controls {
+      right: -1.5rem;
+    }
   }
 </style>
